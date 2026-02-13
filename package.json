@@ -1,0 +1,27 @@
+{
+  "name": "shift-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shift scheduler monorepo with React frontend and Express backend",
+  "workspaces": [
+    "app",
+    "backend",
+    "lib"
+  ],
+  "scripts": {
+    "dev:app": "npm run dev --workspace=app",
+    "dev:backend": "npm run dev -w @shift-scheduler/backend",
+    "dev": "npm run dev:backend & npm run dev:app",
+    "build:app": "npm run build --workspace=app",
+    "build:backend": "npm run build --workspace=backend",
+    "build:lib": "npm run build --workspace=lib",
+    "build": "npm run build:lib && npm run build:backend && npm run build:app",
+    "clean": "rm -rf app/dist backend/dist lib/dist node_modules app/node_modules backend/node_modules lib/node_modules",
+    "dev:docker": "npm run dev:docker -w @shift-scheduler/backend",
+    "migrate:create": "npx drizzle-kit generate --config=backend/drizzle.config.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "drizzle-orm": "^0.45.1"
+  }
+}

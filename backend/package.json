@@ -1,0 +1,33 @@
+{
+  "name": "@shift-scheduler/backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "docker-compose up",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev:docker": "tsx watch src/index.ts",
+    "migrate:create": "drizzle-kit generate --config=drizzle.config.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "dotenv": "^17.3.1",
+    "drizzle-orm": "^0.45.1",
+    "express": "^4.21.2",
+    "graphql": "^16.12.0",
+    "graphql-http": "^1.22.4",
+    "path": "^0.12.7",
+    "pg": "^8.18.0",
+    "pg-pool": "^3.11.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.5",
+    "@types/pg": "^8.16.0",
+    "drizzle-kit": "^0.31.8",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
