@@ -8,9 +8,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mantine/core": "^8.3.15",
+    "@mantine/dates": "^8.3.15",
+    "@mantine/dropzone": "^8.3.15",
+    "@mantine/form": "^8.3.15",
+    "@mantine/hooks": "^8.3.15",
+    "@mantine/modals": "^8.3.15",
+    "@mantine/notifications": "^8.3.15",
+    "@shift-scheduler/lib": "*",
+    "dayjs": "^1.11.19",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "@shift-scheduler/lib": "*"
+    "react-router-dom": "^7.13.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.18",
