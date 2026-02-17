@@ -8,6 +8,13 @@
       "when": 1770958863484,
       "tag": "0000_yellow_eddie_brock",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1771300369741,
+      "tag": "0001_secret_leper_queen",
+      "breakpoints": true
     }
   ]
 }

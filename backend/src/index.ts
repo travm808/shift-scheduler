@@ -1,6 +1,9 @@
 import express from 'express'
 import cors from 'cors'
 import { createServer } from 'http';
+import { getIntrospectionQuery, graphql } from 'graphql';
+import { schema } from "./graphql/schema";
+import { createHandler } from 'graphql-http';
 
 const app = express()
 const PORT = process.env.PORT || 3001
@@ -14,6 +17,17 @@ app.use(express.json())
 // Health check endpoint
 app.get("/health", (_req, res) => {
   res.status(200).send("OK");
+});
+
+app.all("/graphql", createHandler({ schema }))
+
+app.all("/schema", async (_req, res) => {
+    const result = await graphql({
+        schema,
+        source: getIntrospectionQuery(),
+    });
+    res.setHeader('Content-Type', 'application/json');
+    res.json(result);
 });
 
 // Create the HTTP server
